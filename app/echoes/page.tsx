@@ -12,12 +12,23 @@ import {
   Stars,
   PenTool,
   Wind,
+  MoonStar,
+  ScrollText,
+  Infinity,
+  Eye,
+  Gem,
+  Star,
+  Compass,
+  Music4,
+  Sunrise,
+  ChevronRight,
+  Orbit,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Echoes",
   description:
-    "Explore echoes of memories, emotions, dreams, destiny, and the moments that continue to live within us long after they pass.",
+    "Explore echoes of memories, emotions, dreams, destiny, and the moments that continue living within us long after they pass.",
 };
 
 const echoes = [
@@ -25,7 +36,7 @@ const echoes = [
     icon: Heart,
     title: "Echoes of Love",
     description:
-      "Some hearts leave a lasting presence. Their memory continues speaking through moments, songs, places, and silence.",
+      "Some hearts leave a lasting presence. Their memory continues speaking through places, songs, conversations, and silence.",
   },
   {
     icon: Clock3,
@@ -37,18 +48,18 @@ const echoes = [
     icon: Feather,
     title: "Echoes of Words",
     description:
-      "Letters, conversations, promises, and stories often continue living long after they have been spoken.",
+      "Letters, promises, stories, and conversations often continue living long after they have been spoken.",
   },
 ];
 
 const reflections = [
   {
     title: "The Sound Of A Memory",
-    text: "Memories rarely disappear. They transform into quiet echoes that revisit us unexpectedly through a familiar scent, a forgotten photograph, or a passing thought.",
+    text: "Memories rarely disappear. They transform into quiet echoes that revisit us through a scent, a photograph, a place, or a fleeting thought.",
   },
   {
     title: "What Remains After Goodbye",
-    text: "People may leave, moments may end, but the emotions they created often continue shaping our lives in unseen ways.",
+    text: "People may leave and moments may end, but the emotions they created often continue shaping our lives in unseen ways.",
   },
   {
     title: "The Echo Within",
@@ -65,92 +76,183 @@ const journey = [
     number: "01",
     title: "Moment",
     description:
-      "Every echo begins with a single meaningful experience.",
+      "Every echo begins with a meaningful experience that leaves an impression.",
+    icon: Sparkles,
   },
   {
     number: "02",
     title: "Memory",
     description:
-      "The moment becomes part of our inner world and stays with us.",
+      "The experience becomes part of our inner world and remains with us.",
+    icon: MoonStar,
   },
   {
     number: "03",
     title: "Reflection",
     description:
-      "Over time, understanding deepens and new meaning emerges.",
+      "Time deepens understanding and reveals new meaning hidden within the memory.",
+    icon: Eye,
   },
   {
     number: "04",
     title: "Echo",
     description:
-      "The experience continues to influence our life long afterward.",
+      "The experience continues influencing our thoughts, choices, and perspective.",
+    icon: Infinity,
+  },
+];
+
+const influences = [
+  {
+    icon: Music4,
+    title: "Songs",
+    description:
+      "A melody can instantly return us to a forgotten chapter of life.",
+  },
+  {
+    icon: Compass,
+    title: "Places",
+    description:
+      "Certain locations carry emotional fingerprints that never truly fade.",
+  },
+  {
+    icon: ScrollText,
+    title: "Stories",
+    description:
+      "Stories preserve emotions and experiences long after moments disappear.",
+  },
+  {
+    icon: Orbit,
+    title: "Destiny",
+    description:
+      "Some echoes continue guiding us toward people and experiences meant for us.",
   },
 ];
 
 export default function EchoesPage() {
   return (
     <main className="relative overflow-hidden">
-      {/* Background */}
+      {/* ===================================================== */}
+      {/* BACKGROUND */}
+      {/* ===================================================== */}
+
       <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-violet-600/15 blur-[240px]" />
-        <div className="absolute left-0 bottom-0 h-[450px] w-[450px] rounded-full bg-cyan-600/10 blur-[180px]" />
-        <div className="absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-fuchsia-600/10 blur-[200px]" />
+        <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-violet-600/15 blur-[260px]" />
+
+        <div className="absolute left-0 bottom-0 h-[500px] w-[500px] rounded-full bg-cyan-600/10 blur-[220px]" />
+
+        <div className="absolute right-0 top-1/3 h-[600px] w-[600px] rounded-full bg-fuchsia-600/10 blur-[250px]" />
+
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
 
-      {/* Hero */}
-      <section className="relative px-6 pt-32 pb-28">
+      {/* ===================================================== */}
+      {/* HERO */}
+      {/* ===================================================== */}
+
+      <section className="relative px-6 pt-32 pb-32">
         <div className="mx-auto max-w-7xl text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl">
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl">
             <Waves className="h-4 w-4 text-violet-300" />
-            <span className="text-sm uppercase tracking-[0.25em] text-zinc-300">
-              Echoes of Destiny
+
+            <span className="text-xs uppercase tracking-[0.35em] text-zinc-300">
+              Echoes Of Destiny
             </span>
           </div>
 
-          <h1 className="text-6xl font-bold text-white md:text-8xl">
-            The Power Of
+          <h1 className="font-serif text-6xl font-bold leading-none md:text-8xl xl:text-9xl">
+            <span className="block text-white">
+              The Power Of
+            </span>
+
             <span className="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
               Echoes
             </span>
           </h1>
 
-          <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-zinc-400 md:text-xl">
-            Some moments end, yet they never truly leave. They become echoes —
-            lingering memories, emotions, and stories that continue shaping our
-            lives across time.
+          <p className="mx-auto mt-10 max-w-4xl text-lg leading-relaxed text-zinc-400 md:text-2xl">
+            Some moments end, yet they never truly leave.
+            They become echoes — lingering memories,
+            emotions, dreams, lessons, and stories that continue
+            shaping our lives across time.
           </p>
-        </div>
-      </section>
 
-      {/* Quote */}
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-5xl">
-          <div className="rounded-[40px] border border-white/10 bg-white/[0.03] p-12 text-center backdrop-blur-3xl md:p-20">
-            <Quote className="mx-auto mb-8 h-12 w-12 text-violet-300" />
+          <div className="mx-auto mt-20 grid max-w-6xl gap-6 md:grid-cols-4">
+            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl">
+              <Heart className="mx-auto mb-4 h-8 w-8 text-fuchsia-300" />
 
-            <blockquote className="text-3xl leading-relaxed text-white md:text-5xl">
-              “An echo is proof that
-              <br />
-              something meaningful was once here.”
-            </blockquote>
+              <h3 className="font-semibold text-white">
+                Love
+              </h3>
+            </div>
 
-            <p className="mt-10 text-zinc-500">
-              — Echoes of Destiny
-            </p>
+            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl">
+              <Clock3 className="mx-auto mb-4 h-8 w-8 text-cyan-300" />
+
+              <h3 className="font-semibold text-white">
+                Time
+              </h3>
+            </div>
+
+            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl">
+              <Feather className="mx-auto mb-4 h-8 w-8 text-violet-300" />
+
+              <h3 className="font-semibold text-white">
+                Words
+              </h3>
+            </div>
+
+            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl">
+              <Infinity className="mx-auto mb-4 h-8 w-8 text-violet-300" />
+
+              <h3 className="font-semibold text-white">
+                Legacy
+              </h3>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Echo Categories */}
-      <section className="px-6 pb-28">
+      {/* ===================================================== */}
+      {/* QUOTE */}
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="rounded-[50px] border border-white/10 bg-white/[0.03] p-14 text-center backdrop-blur-3xl md:p-24">
+            <Quote className="mx-auto mb-10 h-14 w-14 text-violet-300" />
+
+            <blockquote className="text-4xl font-light leading-relaxed text-white md:text-6xl">
+              “An echo is proof that
+              <br />
+              something meaningful
+              <br />
+              was once here.”
+            </blockquote>
+
+            <div className="mt-12 flex justify-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-zinc-400">
+                <Star className="h-4 w-4 text-violet-300" />
+                Echoes Of Destiny
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      {/* ECHO CATEGORIES */}
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 text-center">
-            <span className="text-sm uppercase tracking-[0.3em] text-violet-300">
+            <span className="text-sm uppercase tracking-[0.35em] text-violet-300">
               What Echoes Leave Behind
             </span>
 
-            <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
-              Three Lasting Impressions
+            <h2 className="mt-5 text-5xl font-bold text-white md:text-6xl">
+              Lasting Impressions
             </h2>
           </div>
 
@@ -158,13 +260,13 @@ export default function EchoesPage() {
             {echoes.map((item, index) => (
               <div
                 key={index}
-                className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-400/20"
+                className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-400/20"
               >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20">
-                  <item.icon className="h-8 w-8 text-violet-300" />
+                <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20">
+                  <item.icon className="h-10 w-10 text-violet-300" />
                 </div>
 
-                <h3 className="mb-4 text-2xl font-bold text-white">
+                <h3 className="mb-5 text-3xl font-bold text-white">
                   {item.title}
                 </h3>
 
@@ -177,11 +279,14 @@ export default function EchoesPage() {
         </div>
       </section>
 
-      {/* Journey */}
-      <section className="px-6 pb-28">
+      {/* ===================================================== */}
+      {/* JOURNEY */}
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 text-center">
-            <h2 className="text-4xl font-bold text-white md:text-5xl">
+            <h2 className="text-5xl font-bold text-white">
               How Echoes Are Created
             </h2>
           </div>
@@ -190,17 +295,19 @@ export default function EchoesPage() {
             {journey.map((item) => (
               <div
                 key={item.number}
-                className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
+                className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-2xl"
               >
-                <div className="mb-6 text-5xl font-bold text-violet-300/40">
+                <div className="mb-8 text-6xl font-bold text-violet-300/20">
                   {item.number}
                 </div>
 
-                <h3 className="mb-4 text-2xl font-semibold text-white">
+                <item.icon className="mb-6 h-10 w-10 text-violet-300" />
+
+                <h3 className="mb-4 text-3xl font-bold text-white">
                   {item.title}
                 </h3>
 
-                <p className="leading-relaxed text-zinc-400">
+                <p className="text-zinc-400">
                   {item.description}
                 </p>
               </div>
@@ -209,15 +316,18 @@ export default function EchoesPage() {
         </div>
       </section>
 
-      {/* Reflections */}
-      <section className="px-6 pb-28">
+      {/* ===================================================== */}
+      {/* REFLECTIONS */}
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 text-center">
-            <span className="text-sm uppercase tracking-[0.3em] text-violet-300">
+            <span className="text-sm uppercase tracking-[0.35em] text-violet-300">
               Reflections
             </span>
 
-            <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
+            <h2 className="mt-5 text-5xl font-bold text-white">
               Listening To The Echoes
             </h2>
           </div>
@@ -226,9 +336,9 @@ export default function EchoesPage() {
             {reflections.map((item, index) => (
               <div
                 key={index}
-                className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl transition-all duration-500 hover:border-violet-400/20"
+                className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-2xl transition-all duration-500 hover:border-violet-400/20"
               >
-                <h3 className="mb-5 text-2xl font-bold text-white">
+                <h3 className="mb-5 text-3xl font-bold text-white">
                   {item.title}
                 </h3>
 
@@ -241,63 +351,106 @@ export default function EchoesPage() {
         </div>
       </section>
 
-      {/* Featured Section */}
-      <section className="px-6 pb-28">
-        <div className="mx-auto max-w-6xl">
-          <div className="overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-violet-950/60 via-black/40 to-fuchsia-950/60 p-12 backdrop-blur-3xl md:p-20">
-            <div className="text-center">
-              <Wind className="mx-auto mb-8 h-14 w-14 text-violet-300" />
+      {/* ===================================================== */}
+      {/* INFLUENCES */}
+      {/* ===================================================== */}
 
-              <h2 className="text-4xl font-bold text-white md:text-6xl">
+      <section className="px-6 pb-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20 text-center">
+            <h2 className="text-5xl font-bold text-white">
+              Where Echoes Live
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            {influences.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl"
+              >
+                <item.icon className="mb-6 h-10 w-10 text-violet-300" />
+
+                <h3 className="mb-4 text-2xl font-bold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="text-zinc-400">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      {/* FEATURED SECTION */}
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="overflow-hidden rounded-[50px] border border-white/10 bg-gradient-to-br from-violet-950/60 via-black/40 to-fuchsia-950/60 p-14 backdrop-blur-3xl md:p-24">
+            <div className="text-center">
+              <Wind className="mx-auto mb-10 h-16 w-16 text-violet-300" />
+
+              <h2 className="text-5xl font-bold text-white md:text-7xl">
                 Every Memory Has A Voice
               </h2>
 
-              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
+              <p className="mx-auto mt-10 max-w-4xl text-lg leading-relaxed text-zinc-400">
                 We often believe that moments disappear once they pass.
-                Yet the truth is different. They remain within us as lessons,
-                emotions, wisdom, inspiration, and stories that continue
-                speaking through the years.
+                Yet the truth is different.
+                They remain within us as wisdom, emotion, inspiration,
+                lessons, and stories that continue speaking through the years.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ===================================================== */}
       {/* CTA */}
-      <section className="px-6 pb-32">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-[40px] border border-white/10 bg-white/[0.03] p-12 text-center backdrop-blur-3xl md:p-20">
-            <div className="mb-8 flex justify-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-violet-500/10">
-                <Stars className="h-10 w-10 text-violet-300" />
+      {/* ===================================================== */}
+
+      <section className="px-6 pb-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-[50px] border border-white/10 bg-white/[0.03] p-14 text-center backdrop-blur-3xl md:p-24">
+            <div className="mb-10 flex justify-center">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-violet-500/10">
+                <Stars className="h-12 w-12 text-violet-300" />
               </div>
             </div>
 
-            <h2 className="text-4xl font-bold text-white md:text-6xl">
+            <h2 className="text-5xl font-bold text-white md:text-7xl">
               Explore More Echoes
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400">
-              Discover stories, letters, reflections, and memories that
-              continue resonating long after the final page.
+            <p className="mx-auto mt-8 max-w-3xl text-lg text-zinc-400">
+              Discover stories, letters, reflections, memories,
+              and soulful writing that continue resonating
+              long after the final page.
             </p>
 
-            <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-black transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center gap-3 rounded-full bg-white px-10 py-5 font-medium text-black transition-all duration-300 hover:scale-105"
               >
                 <PenTool className="h-5 w-5" />
                 Read Stories
+
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
 
               <Link
                 href="/books"
-                className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-white transition-all duration-300 hover:bg-white/10"
+                className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-10 py-5 text-white transition-all duration-300 hover:bg-white/10"
               >
                 <BookOpen className="h-5 w-5" />
                 Explore Books
-                <ArrowRight className="h-5 w-5" />
+
+                <ChevronRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
