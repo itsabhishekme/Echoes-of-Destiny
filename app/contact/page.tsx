@@ -289,7 +289,7 @@ export default function ContactPage() {
             </div>
 
             {/* ====================================== */}
-            {/* FORM */}
+            {/* EXTENDED CONTACT FORM */}
             {/* ====================================== */}
 
             <div className="rounded-[42px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-3xl md:p-12 xl:p-14">
@@ -303,18 +303,22 @@ export default function ContactPage() {
                   Start A Conversation
                 </h2>
 
-                <p className="mt-5 text-lg text-zinc-400">
+                <p className="mt-5 text-lg text-zinc-400 max-w-2xl">
                   Share your thoughts, reflections, questions,
-                  or ideas. Every meaningful connection begins
-                  with a message.
+                  collaboration ideas, personal experiences,
+                  spiritual journeys, writing inquiries, media
+                  requests, or simply connect through a meaningful
+                  conversation.
                 </p>
               </div>
 
               <form className="space-y-8">
+
+                {/* Name */}
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label className="mb-3 block text-sm text-zinc-400">
-                      First Name
+                      First Name *
                     </label>
 
                     <input
@@ -326,7 +330,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="mb-3 block text-sm text-zinc-400">
-                      Last Name
+                      Last Name *
                     </label>
 
                     <input
@@ -337,21 +341,97 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="mb-3 block text-sm text-zinc-400">
-                    Email Address
-                  </label>
+                {/* Contact */}
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-3 block text-sm text-zinc-400">
+                      Email Address *
+                    </label>
 
-                  <input
-                    type="email"
-                    placeholder="you@example.com"
-                    className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
-                  />
+                    <input
+                      type="email"
+                      placeholder="you@example.com"
+                      className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-3 block text-sm text-zinc-400">
+                      Phone Number
+                    </label>
+
+                    <input
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                    />
+                  </div>
                 </div>
 
+                {/* Location */}
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-3 block text-sm text-zinc-400">
+                      Country
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="India"
+                      className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-3 block text-sm text-zinc-400">
+                      City
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="Bangalore"
+                      className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                    />
+                  </div>
+                </div>
+
+                {/* Category */}
+                <div>
+                  <label htmlFor="inquiryType" className="mb-3 block text-sm text-zinc-400">
+                    Inquiry Type
+                  </label>
+
+                  <select id="inquiryType" className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10">
+                    <option className="bg-zinc-900">
+                      General Inquiry
+                    </option>
+
+                    <option className="bg-zinc-900">
+                      Collaboration
+                    </option>
+
+                    <option className="bg-zinc-900">
+                      Writing & Publishing
+                    </option>
+
+                    <option className="bg-zinc-900">
+                      Media & Interview
+                    </option>
+
+                    <option className="bg-zinc-900">
+                      Spiritual Discussion
+                    </option>
+
+                    <option className="bg-zinc-900">
+                      Feedback
+                    </option>
+                  </select>
+                </div>
+
+                {/* Subject */}
                 <div>
                   <label className="mb-3 block text-sm text-zinc-400">
-                    Subject
+                    Subject *
                   </label>
 
                   <input
@@ -361,9 +441,23 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* Website */}
                 <div>
                   <label className="mb-3 block text-sm text-zinc-400">
-                    Message
+                    Website / Social Profile
+                  </label>
+
+                  <input
+                    type="url"
+                    placeholder="https://yourwebsite.com"
+                    className="w-full rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="mb-3 block text-sm text-zinc-400">
+                    Message *
                   </label>
 
                   <textarea
@@ -373,17 +467,77 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-3 rounded-full bg-white px-10 py-5 font-medium text-black transition-all duration-300 hover:scale-105"
-                >
-                  <Send className="h-5 w-5" />
-                  Send Message
+                {/* Additional Details */}
+                <div>
+                  <label className="mb-3 block text-sm text-zinc-400">
+                    Additional Notes
+                  </label>
 
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                  <textarea
+                    rows={5}
+                    placeholder="Any extra details you'd like to share..."
+                    className="w-full resize-none rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-white outline-none transition-all duration-300 focus:border-violet-400/30 focus:bg-white/10"
+                  />
+                </div>
+
+                {/* Checkboxes */}
+                <div className="space-y-4">
+                  <label className="flex items-start gap-3 text-sm text-zinc-400">
+                    <input
+                      type="checkbox"
+                      className="mt-1 h-5 w-5 rounded border-white/20 bg-white/10"
+                    />
+
+                    <span>
+                      I agree to the collection and processing
+                      of my submitted information.
+                    </span>
+                  </label>
+
+                  <label className="flex items-start gap-3 text-sm text-zinc-400">
+                    <input
+                      type="checkbox"
+                      className="mt-1 h-5 w-5 rounded border-white/20 bg-white/10"
+                    />
+
+                    <span>
+                      Subscribe me to occasional updates,
+                      articles, and announcements.
+                    </span>
+                  </label>
+                </div>
+
+                {/* Upload */}
+                <div>
+                  <label htmlFor="attachment" className="mb-3 block text-sm text-zinc-400">
+                    Attachment (Optional)
+                  </label>
+
+                  <input
+                    id="attachment"
+                    type="file"
+                    className="w-full rounded-3xl border border-dashed border-white/10 bg-white/5 px-6 py-5 text-zinc-400 file:mr-4 file:rounded-full file:border-0 file:bg-white file:px-5 file:py-2 file:text-black"
+                  />
+                </div>
+
+                {/* Button */}
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    className="group inline-flex items-center gap-3 rounded-full bg-white px-10 py-5 font-medium text-black transition-all duration-300 hover:scale-105"
+                  >
+                    <Send className="h-5 w-5" />
+
+                    Send Message
+
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                </div>
+
               </form>
             </div>
+
+            {/* close grid and container for contact section */}
           </div>
         </div>
       </section>
